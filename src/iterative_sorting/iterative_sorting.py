@@ -1,52 +1,45 @@
 import random
 
-[0,1,            5, 8, 4, 2, 9, 6, 3, 7]
+#Selection sort is when you take the smallest element in an unsorted array and bring it over to the sorted side, then go back to the unsorted side and bring the next smallest element in the unsorted array and then keep repeating the process until the last index is reached in the unsorted array.
 
-def selection_sort( arr ):
-    
-# # loop through n-1 elements
+def selection_sort( arr ): 
+    #1. In the initial unsorted array, iterate over it until the smallest element is reached
     for i in range(0, len(arr) - 1):
+        #print(arr)
+        #2. Store smallest element in a sorted variable
         cur_index = i
         smallest_index = cur_index
-    #     #TO-DO: find next smallest element
-    #     #(hint, can do in 3 loc)
+        #3. Loop over the rest of the unsorted array
+        for j in range(cur_index, len(arr)):
+            #4.if the any element is smaller than the current, smaller element, move to the sorted variable
+            if arr[j] < arr[smallest_index]:
+                smallest_index = j
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
 
-    # TO-DO: swap
-    return arr
-    
+    return arr  
 
-    #Set the smallest # equal to the 0 index#
-
-
+        
+test_list = random.sample(range(0, 40), 10)
+selection_sort(test_list)
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
-    #Establish the length of array to establish the items within the ar
-    length = len(arr)
-    for i in range(length - 1):
-        #Loop over the array equivalent to for
-        for j in range(length - 1):
-            if arr[j] > arr[j+1]:
-            #Swap indices
-                bubble = i
-                arr[j] = arr[j+1]
-                arr[j+1] = bubble
 
-        return arr
+#Bubble Sort
+#Bubble sort works by comparing each element to it's neigbor
+#If the second index is smaller than the first index, swap the two indices
 
 
-# # STRETCH: implement the Count Sort function below
-# def count_sort( arr, maximum=-1 ):
+def bubble_sort(arr):
+    
 
-#     return arr
+    return arr
 
-#Loop through an array and find the smallest #(i).
-    # for i in range(0, len(arr)-1):
-    #     return min(i)
-    #Loop through the array again and search for the next smallest #(j)
-    #If j < i, swap
-        # for j in range(0, len(arr)-1):
-        #     if j < i:
-        #         return min(j)
-    #What's the code for how to stop looping?
- 
+
+# STRETCH: implement the Count Sort function below
+def count_sort(arr, maximum=-1):
+
+    return arr
+
+
+  
+  
