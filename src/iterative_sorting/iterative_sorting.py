@@ -27,12 +27,25 @@ selection_sort(test_list)
 #Bubble Sort
 #Bubble sort works by comparing each element to it's neigbor
 #If the second index is smaller than the first index, swap the two indices
+#If you reach the end of the array, start again
 
 
 def bubble_sort(arr):
-    
+    #Loop through the initial unsorted array
+    for i in range(0, len(arr) - 1):
+        for j in range(0, len(arr) -1):
+            if arr[j] > arr[j+1]:
+                #If the second index is smaller than the first index, swap the two indices
+                temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+
+
+        
 
     return arr
+
+bubble_sort(test_list)
 
 
 # STRETCH: implement the Count Sort function below
